@@ -4,12 +4,18 @@ Two demos: (1) checkpointer persistence — same thread_id recalls prior turns, 
 different thread_id starts clean; (2) human-in-the-loop — accuse_suspect pauses for
 approval before it executes.
 """
+import sys
 from pprint import pprint
 
 from langchain.messages import HumanMessage
 from langgraph.types import Command
 
 from agent import build_agent
+
+# Windows terminals often default to a legacy codepage (e.g. cp1252) that can't
+# encode characters like em-dashes the model may output. Force UTF-8 for stdout.
+if sys.stdout.encoding is not None and sys.stdout.encoding.lower() != "utf-8":
+    sys.stdout.reconfigure(encoding="utf-8")
 
 
 def demo_persistence(agent):
