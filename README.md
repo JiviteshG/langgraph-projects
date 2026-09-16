@@ -1,4 +1,4 @@
-# Sherlock Holmes LangGraph Agent
+# LangGraph Agent — Persistence, Middleware & Human-in-the-Loop
 
 A small, self-contained [LangGraph](https://github.com/langchain-ai/langgraph) ReAct agent (via LangChain's `create_agent`), built to demonstrate three concepts beyond a bare tool-calling loop:
 
