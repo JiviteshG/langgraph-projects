@@ -66,7 +66,7 @@ def build_agent(model=None):
     the live Groq API. Defaults to the real model used at runtime.
     """
     if model is None:
-        model = ChatGroq(model="llama-3.1-8b-instant", temperature=0.9)
+        model = ChatGroq(model="openai/gpt-oss-20b", temperature=0.9)
 
     return create_agent(
         model=model,
